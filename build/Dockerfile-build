@@ -1,0 +1,15 @@
+# FROM node:lts
+FROM node:17-alpine as web-builder
+WORKDIR /opt
+ADD package.json .
+RUN yarn install
+ADD . .
+RUN yarn build
+
+# FROM nginx
+FROM nginx
+WORKDIR /dist/stepin-template/
+COPY --from=web-builder /opt/dist .
+
+ADD ./build/nginx.conf /etc/nginx/conf.d/
+EXPOSE 8080

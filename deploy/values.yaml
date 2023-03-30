@@ -1,0 +1,29 @@
+replicaCount: 2
+
+image:
+  repository: stepin-template
+  pullPolicy: IfNotPresent 
+  tag: "v0.0.1"
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+podAnnotations: {}
+
+podSecurityContext: {}
+
+securityContext: {}
+
+service:
+  type: NodePort
+  port: 8080
+  nodePort: 31399
+
+resources: {}
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
