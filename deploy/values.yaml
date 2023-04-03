@@ -20,7 +20,13 @@ service:
   port: 8080
   nodePort: 31399
 
-resources: {}
+resources:
+  limits:
+    cpu: 2000m
+    memory: 4Gi
+  requests:
+    cpu: 100m
+    memory: 128Mi
 
 nodeSelector: {}
 
