@@ -16,9 +16,7 @@ podSecurityContext: {}
 securityContext: {}
 
 service:
-  type: NodePort
   port: 8080
-  nodePort: 31399
 
 resources:
   limits:
@@ -41,8 +39,8 @@ ingress:
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: examplelitebeecloud.hrlyit.com
+    - host: litebeecloud.hrlyit.com
       paths:
-        - path: /
+        - path: /stepin
           pathType: Prefix
   tls: []
